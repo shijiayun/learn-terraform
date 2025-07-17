@@ -1,0 +1,16 @@
+steps:
+- name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+  entrypoint: 'gcloud'
+  args:
+    - 'infra-manager'
+    - 'deployments'
+    - 'apply'
+    - 'learn-terraform' # 请替换为您的 Deployment 名称
+    - '--project=work-463210'
+    - '--location=us-central1' # 请替换为您的 Deployment 所在区域
+    - '--git-source-repo=https://github.com/shijiayun/learn-terraform' # 请替换为您的 GitHub Repo URL
+    - '--git-source-ref=main'
+substitutions:
+  _REGION: 'us-central1' # 设定预设区域
+options:
+  logging: CLOUD_LOGGING_ONLY

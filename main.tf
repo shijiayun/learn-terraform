@@ -14,7 +14,7 @@ provider "google" {
 }
 
 resource "google_compute_network" "vpc_network" {
-  name = "terraform-network"
+  name = "terraform-network2"
 }
 
 resource "google_compute_instance" "vm_instance" {
@@ -24,7 +24,7 @@ resource "google_compute_instance" "vm_instance" {
 
   boot_disk {
     initialize_params {
-      image = "cos-cloud/cos-stable"
+      image = "debian-cloud/debian-11"
     }
   }
 
